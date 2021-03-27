@@ -6,11 +6,12 @@ def main():
     protagonist = Character(name='You', hp=100, ability_power=10, dodge=0.15)
     
     while True:
-        ability = random.uniform(0, 1)
-        if ability > 0.5:
-            protagonist.attack(boss)
-        else:
+        
+        print("1.Heal, 2.Attack")
+        answer =  int(input("Action:"))
+        if(answer == 1):
             protagonist.heal()
+
         boss.attack(protagonist)
         
         boss_status = boss.check_life()
